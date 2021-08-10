@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+/* font-family: 'Montserrat', sans-serif; */
+
+@font-face {
+  font-family: "Oswald-Light";
+  src: url("../tipografias/Oswald/static/Oswald-Light.ttf");
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* HELPERS */
+.container {
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,76 @@
+.row {
+  display: flex;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+/* GRID */
+.col-12 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-10 {
+  width: 83.3333%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-8 {
+  width: 66.6666%;
+}
+
+.col-7 {
+  width: 58.3%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-5 {
+  width: 41.6666%;
+}
+
+.col-4 {
+  width: 33.3333%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-2 {
+  width: 16.6666%;
+}
+
+.col-1 {
+  width: 8.3333%;
+}
