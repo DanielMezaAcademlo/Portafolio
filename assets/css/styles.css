@@ -6,6 +6,21 @@
   src: url("../tipografias/Oswald/static/Oswald-Light.ttf");
 }
 
+/* HEADER FIXED JS */
+
+.fixed-header {
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.fixed-header nav .logo a {
+  color: #000;
+}
+
+.fixed-header nav ul li a {
+  color: #000;
+}
+
 /* HEADER */
 
 header {
@@ -15,6 +30,7 @@ header {
   left: 0;
   padding: 1.5rem 0;
   background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .logo a {
