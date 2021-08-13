@@ -112,6 +112,8 @@ nav.social-nav ul li a img {
 
 .about {
   padding: 4rem;
+  opacity: 0;
+  transition: all 1.3s ease;
 }
 
 .container-about {
@@ -122,6 +124,7 @@ nav.social-nav ul li a img {
 
 .img-about {
   width: 40%;
+  transition: all 1s ease;
 }
 
 .img-about img {
@@ -350,4 +353,18 @@ p.about-info__p {
 .opacity-cover p {
   transform: translateX(25px);
   transition: all 0.3s ease;
+}
+
+/* BUTTON GO HOME */
+
+.mainSectionButton button {
+  background-color: #c39967;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  color: #fff;
 }
