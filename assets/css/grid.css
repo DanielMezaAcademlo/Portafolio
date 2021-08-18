@@ -74,3 +74,9 @@
 .col-1 {
   width: 8.3333%;
 }
+
+@media (max-width: 560px) {
+  .col-xs-8 {
+    width: 66.6666%;
+  }
+}

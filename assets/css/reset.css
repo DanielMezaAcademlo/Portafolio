@@ -42,3 +42,9 @@ p {
   width: 80%;
   margin: auto;
 }
+
+@media screen and (max-width: 560px) {
+  .container {
+    width: 90%;
+  }
+}

@@ -31,6 +31,7 @@ header {
   padding: 1.5rem 0;
   background-color: transparent;
   transition: all 0.3s ease;
+  z-index: 9999999999;
 }
 
 .logo a {
@@ -71,9 +72,40 @@ header ul li a:hover::before {
   left: 0;
 }
 
-@media (max-width: 700px) {
-  header {
-    display: none;
+.responsive-menu {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  header nav ul li {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  header ul {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100% !important;
+    height: 220px !important;
+    background-color: var(--principal);
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+  }
+
+  .responsive-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
