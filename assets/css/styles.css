@@ -31,6 +31,11 @@ header {
   padding: 1.5rem 0;
   background-color: transparent;
   transition: all 0.3s ease;
+  z-index: 9999999 !important;
+}
+
+header nav {
+  width: 100% !important;
 }
 
 .logo a {
@@ -71,10 +76,10 @@ header ul li a:hover::before {
   left: 0;
 }
 
-@media (max-width: 700px) {
-  header {
-    display: none;
-  }
+.responsive-menu {
+  display: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* MAIN SECTION */
