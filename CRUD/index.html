@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h2 class="title">CRUD Vanilla Js</h2>
+
+    <form action="" id="main-form">
+      <div class="userInfoInputs">
+        <div class="userInfoField">
+          <label for="nombre">Nombre: </label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Escribe tu nombre"
+            required
+          />
+        </div>
+        <div class="userInfoField">
+          <label for="job">Ocupación: </label>
+          <input
+            type="text"
+            name="job"
+            id="job"
+            placeholder="Escribe tu ocupación"
+            required
+          />
+        </div>
+      </div>
+
+      <input type="submit" value="Guardar" />
+    </form>
+
+    <div id="users-container" class="userList">
+      <!-- <div class="userItem">
+        <div class="userInfo">
+          <h4>Daniel Meza</h4>
+          <h4>Front End Dev</h4>
+        </div>
+
+        <div class="actions">
+          <button class="update" id="update">Editar</button>
+          <button class="delete" id="delete">Eliminar</button>
+        </div>
+      </div> -->
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
