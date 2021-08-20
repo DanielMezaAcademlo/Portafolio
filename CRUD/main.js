@@ -18,10 +18,14 @@ const createUser = event => {
 
   //Agregamos al arreglo, el objeto
   users.push(user);
+  form.reset();
+  renderList();
   console.log(users);
 };
 
+//Función encargada de pintar todos los usuarios del arreglo users
 const renderList = () => {
+  container.innerHTML = "";
   if (users.length > 0) {
     users.forEach(user => {
       //Creamos el contenedor principal para el usuario
@@ -40,7 +44,7 @@ const renderList = () => {
 
       //Creamos el contenedor y el contenido para los botones de acción
       const buttonContainer = document.createElement("div");
-      userInfo.classList.add("actions");
+      buttonContainer.classList.add("actions");
 
       const updateButton = document.createElement("button");
       const deleteButton = document.createElement("button");
@@ -51,11 +55,22 @@ const renderList = () => {
       deleteButton.classList.add("delete");
 
       //Agregar al respectivo container
+
+      //(Ver HTML)
+      //Agregamos el contenedor con clase userItem al contenedor principal (id="users-container")
       container.appendChild(userContainer);
+
+      //Agregamos el contenedor con clase userInfo al contenedor con clase userItem
       userContainer.appendChild(userInfo);
+
+      //Agregamos los h4 con la información del usuario  al contenedor con clase userInfo
       userInfo.appendChild(userInfoName);
       userInfo.appendChild(userInfoJob);
+
+      //Agregamos el contenedor con clase actions al contenedor con clase userItem
       userContainer.appendChild(buttonContainer);
+
+      //Agregamos los botones Editar y Eliminar al contenedor con clase actions
       buttonContainer.appendChild(updateButton);
       buttonContainer.appendChild(deleteButton);
     });
