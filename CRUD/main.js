@@ -1,7 +1,20 @@
 const form = document.getElementById("main-form");
 const container = document.getElementById("users-container");
 //Variables útiles
-let users = [];
+let users = [
+  {
+    nombre: "Daniel",
+    ocupacion: "Front End Dev"
+  },
+  {
+    nombre: "Santiago",
+    ocupacion: "Back End Dev"
+  },
+  {
+    nombre: "Francisco",
+    ocupacion: "UI/UX Designer"
+  }
+];
 
 //Funciones
 
@@ -20,14 +33,14 @@ const createUser = event => {
   users.push(user);
   form.reset();
   renderList();
-  console.log(users);
 };
 
 //Función encargada de pintar todos los usuarios del arreglo users
 const renderList = () => {
   container.innerHTML = "";
   if (users.length > 0) {
-    users.forEach(user => {
+    users.forEach((user, index) => {
+      console.log(users[index], index);
       //Creamos el contenedor principal para el usuario
       const userContainer = document.createElement("div");
       userContainer.classList.add("userItem");
@@ -54,6 +67,12 @@ const renderList = () => {
       deleteButton.innerText = "Eliminar";
       deleteButton.classList.add("delete");
 
+      //Eventos a los botones
+      //Eliminar
+      deleteButton.onclick = () => deleteUser(index);
+      //Editar
+      updateButton.onclick = () => updateUser(index);
+
       //Agregar al respectivo container
 
       //(Ver HTML)
@@ -77,7 +96,21 @@ const renderList = () => {
   }
 };
 
+//Función para eliminar registros
+const deleteUser = index => {
+  console.log(users[index]);
+  users.splice(index, 1);
+  renderList();
+};
+
+//Función para editar registros
+
+const updateUser = index => {
+  console.log(users[index]);
+};
+
 //Eventos
 form.onsubmit = createUser;
 
-console.log(users);
+document.addEventListener("DOMContentLoaded", renderList);
+// console.log(users);
