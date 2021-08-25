@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trivia</title>
+  </head>
+  <body>
+    <form action="" id="triviaForm">
+      <label for="amount">Número de preguntas:</label>
+      <input type="text" id="amount" value="0" />
+
+      <label for="difficulty">Dificultad:</label>
+      <select name="" id="difficulty">
+        <option value="0">Any difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <label for="type">Tipo de pregunta:</label>
+      <select name="" id="type">
+        <option value="0">Any type</option>
+        <option value="boolean">True/false</option>
+        <option value="multiple">Multiple Choice</option>
+      </select>
+
+      <input type="submit" value="Empezar !" id="formButton" />
+    </form>
+
+    <button id="next">Next Q</button>
+
+    <script src="trivia.js"></script>
+  </body>
+</html>
