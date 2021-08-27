@@ -9,7 +9,7 @@
   <body>
     <form action="" id="triviaForm">
       <label for="amount">Número de preguntas:</label>
-      <input type="text" id="amount" value="0" />
+      <input type="text" id="amount" value="2" />
 
       <label for="difficulty">Dificultad:</label>
       <select name="" id="difficulty">
@@ -23,13 +23,13 @@
       <select name="" id="type">
         <option value="0">Any type</option>
         <option value="boolean">True/false</option>
-        <option value="multiple">Multiple Choice</option>
+        <option value="multiple" selected>Multiple Choice</option>
       </select>
 
       <input type="submit" value="Empezar !" id="formButton" />
     </form>
 
-    <button id="next">Next Q</button>
+    <div id="question-container"></div>
 
     <script src="trivia.js"></script>
   </body>

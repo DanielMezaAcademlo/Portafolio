@@ -1,10 +1,13 @@
 // https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple
 let mainForm = document.getElementById("triviaForm");
-let nextBtn = document.getElementById("next");
+let container = document.getElementById("question-container");
 
 let questions;
 let q = 0;
 let score = 0;
+
+let correctAnswer;
+
 //Funciones
 const createApiUrl = e => {
   e.preventDefault();
@@ -23,29 +26,73 @@ const fetchDataAPI = url => {
 };
 
 const fillQuestions = questionsAPI => {
-  console.log(questionsAPI);
   questions = questionsAPI;
+  console.log(questions);
   showQuestions();
 };
 
 const showQuestions = () => {
-  console.log(questions[q]);
-  //   questions.forEach(question => {
-  //     console.log(`Pregunta: ${question.question}`);
-  //     console.log(`Respuesta correcta: ${question.correct_answer}`);
-  //     console.log(`Respuestas incorrectas: ${question.incorrect_answers}`);
-  //     console.log(`Dificultad: ${question.difficulty}`);
-  //     console.log(`Categoría: ${question.category}`);
-  //   });
+  correctAnswer = questions[q].correct_answer;
+
+  if (questions[q].incorrect_answers.length > 1) {
+    container.innerHTML = `
+    <div>
+      <h4>${questions[q].question}</h4>
+      <ul>
+        <li><button onClick="handleCheckAnswer(this)">${
+          questions[q].correct_answer
+        }</button></li>
+        <li><button onClick="handleCheckAnswer(this)"> ${
+          questions[q].incorrect_answers[0]
+        }</button></li>
+        <li><button onClick="handleCheckAnswer(this)">${
+          questions[q].incorrect_answers[1]
+        }</button></li>
+        <li><button onClick="handleCheckAnswer(this)">${
+          questions[q].incorrect_answers[2]
+        }</button></li>
+
+    </ul>
+    </div>
+  `;
+  } else {
+    container.innerHTML = `
+    <div>
+      <h4>${questions[q].question}</h4>
+      <ul>
+        <li><button onClick="handleCheckAnswer(this)">${
+          questions[q].correct_answer
+        }</button></li>
+        <li><button onClick="handleCheckAnswer(this)"> ${
+          questions[q].incorrect_answers[0]
+        }</button></li>
+
+    </ul>
+    </div>
+  `;
+  }
 };
 
-const handleNextQuestion = () => {
-  q++;
-  showQuestions();
+const handleCheckAnswer = button => {
+  if (button.innerText === correctAnswer) {
+    score++;
+    console.log("Correcto");
+  } else {
+    console.log("Incorrecto");
+  }
+
+  if (questions.length - 1 !== q) {
+    q++;
+    showQuestions();
+  } else {
+    console.log(`Juego terminado. Este es tu puntuación: ${score}`);
+  }
 };
 
-console.log(questions);
+// const handleNextQuestion = () => {
+//   q++;
+//   showQuestions();
+// };
 
 //Events
 mainForm.onsubmit = createApiUrl;
-nextBtn.onclick = handleNextQuestion;
