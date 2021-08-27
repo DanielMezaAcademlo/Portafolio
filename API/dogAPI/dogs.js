@@ -6,13 +6,20 @@ let imageContainer = document.getElementById("image-dog");
 
 let breedsArray = [];
 
-//Funciones
-const fetchAPIBreeds = () => {
+const fetchAPIBreeds = async () => {
   const breedsList = "https://dog.ceo/api/breeds/list/all";
 
-  fetch(breedsList)
-    .then(response => response.json())
-    .then(result => handleFillBreeds(result.message));
+  try {
+    const responseAPIBreeds = await fetch(breedsList);
+    const result = await responseAPIBreeds.json();
+    handleFillBreeds(result.message);
+  } catch (error) {
+    console.log(error);
+  }
+
+  // fetch(breedsList)
+  //   .then(response => response.json())
+  //   .then(result => handleFillBreeds(result.message));
 };
 
 const handleFillBreeds = breedListAPI => {
@@ -50,20 +57,32 @@ const createOptionsElement = () => {
 
 //PROCEDIMIENTO PARA MOSTRAR LA IMAGEN
 
-const handleDataAPI = e => {
+const handleDataAPI = async e => {
   e.preventDefault();
   let breedValue = selectForm.value;
   const imageAPI = `https://dog.ceo/api/breed/${breedValue}/images/random`;
 
-  fetch(imageAPI)
-    .then(response => response.json())
-    .then(image => {
-      imageContainer.innerHTML = "";
-      const dogImage = document.createElement("img");
-      dogImage.setAttribute("src", image.message);
-      imageContainer.appendChild(dogImage);
-    })
-    .catch(err => console.log(err));
+  imageContainer.innerHTML = "";
+
+  try {
+    const responseImageAPI = await fetch(imageAPI);
+    const result = await responseImageAPI.json();
+    const dogImage = document.createElement("img");
+    dogImage.setAttribute("src", result.message);
+    imageContainer.appendChild(dogImage);
+  } catch (error) {
+    console.log(error);
+  }
+
+  // fetch(imageAPI)
+  //   .then(response => response.json())
+  //   .then(image => {
+  //     imageContainer.innerHTML = "";
+  //     const dogImage = document.createElement("img");
+  //     dogImage.setAttribute("src", image.message);
+  //     imageContainer.appendChild(dogImage);
+  //   })
+  //   .catch(err => console.log(err));
 };
 
 document.addEventListener("DOMContentLoaded", fetchAPIBreeds);
